@@ -16,7 +16,10 @@ I testplanen finns det flera variabler definierade som används när testerna k�
  
 Det finns en datafil (users.csv) som används för att mata tjänsteanropen med data. Denna filen är en komma separerad fil som håller patientinformation såsom personid och typ av person id.
 
+### Assertions ###
+Alla fel som inträffar vid anrop loggas till disk. Det finns en lyssnare "Save Failed Responses to file" som skriver ner alla fallerade svar till ~/logs/FailedResponsesLog_. ~ betyder att filerna skrivs till samma katalog som testplanen finns.
 
+Den finns en assertion vid varje anrop som validera med hjälp av XPath att det inte finns några ProcessingStatusList/statusCode med texten NoDataSynchFailed
  
 ## Att köra testplanen ##
 
