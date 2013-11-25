@@ -87,6 +87,11 @@
             <stringProp name="Argument.value">agg</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+          <elementProp name="TIMESTAMP" elementType="Argument">
+            <stringProp name="Argument.name">TIMESTAMP</stringProp>
+            <stringProp name="Argument.value">${__time(yyyyMMddhhmmssSSS)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
         </collectionProp>
       </elementProp>
       <stringProp name="TestPlan.user_define_classpath"></stringProp>
@@ -267,7 +272,7 @@
         </hashTree>
       </hashTree>
       <ResultSaver guiclass="ResultSaverGui" testclass="ResultSaver" testname="Save Failed Responses to file" enabled="true">
-        <stringProp name="FileSaver.filename">~/logs/FailedResponsesLog_</stringProp>
+        <stringProp name="FileSaver.filename">~/FailedResponsesLog_${TIMESTAMP}-${__threadNum}</stringProp>
         <boolProp name="FileSaver.errorsonly">true</boolProp>
         <boolProp name="FileSaver.skipautonumber">false</boolProp>
         <boolProp name="FileSaver.skipsuffix">false</boolProp>
