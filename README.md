@@ -8,13 +8,13 @@ Detta projekt är ett [jmeter](http://jmeter.apache.org/) projekt som används f
 Testplanen håller fem stycken trådgrupper varav fyra är till för lasttester och en för robusthetstester, se prefix i namnet. Alla dessa är tänkte att gå i sekvens efter varandra. Det finns ytterliga två trådgrupper i testplanen och den ena är Shared Modules där, som namnet säger, det finns delade moduler. Den andra trådgruppen är Archive och den är endast en behållare för att arkivera artifakter som vi inte vill slänga.
 
 I testplanen finns det flera variabler definierade som används när testerna körs. Dessa variabler är:
-* **BASE_URL** - Bas url:en till tjänstern, t.ex _https://qa.esb.ntjp.se/vp_
-* **LOGICAL_ADDRESS** - Logiska adress som skall användas när tjänsterna anropas.
-* **LOADTEST_DURATIONTIME_SEC** - Antal sekunder som lasttesten skall pågå.
-* **ROBUSTNESSTEST_DURATIONTIME_SEC** - Antal sekunder som ribusthetstesten skall pågå.
-* **NO_OF_THREADS** - Antal trådar som skall användas för varje trådgrupp.
+ * **BASE_URL** - Bas url:en till tjänstern, t.ex _https://qa.esb.ntjp.se/vp_
+ * **LOGICAL_ADDRESS** - Logiska adress som skall användas när tjänsterna anropas.
+ * **LOADTEST_DURATIONTIME_SEC** - Antal sekunder som lasttesten skall pågå.
+ * **ROBUSTNESSTEST_DURATIONTIME_SEC** - Antal sekunder som ribusthetstesten skall pågå.
+ * **NO_OF_THREADS** - Antal trådar som skall användas för varje trådgrupp.
  
-Det finns ett datafil (users.csv) som används för att mata tjänsteanropen med data. Denna filen är en komma separerad fil som håller patientinformation såsom personid och typ av person id.
+Det finns en datafil (users.csv) som används för att mata tjänsteanropen med data. Denna filen är en komma separerad fil som håller patientinformation såsom personid och typ av person id.
 
 
  
@@ -22,9 +22,9 @@ Det finns ett datafil (users.csv) som används för att mata tjänsteanropen med
 
 
 Kör testplanen genom att köra följande steg:
-# Kontrollera att Loop Count i alla trådgrupper har Forever ikryssat. Detta innebär att trådgruppen kommer köras för evigt enligt schemaläggaren (Scheduler) där vi använder Duration för att beskriva hur länge testen skall köras. Vill du endast testa skriptet så är det lämpligt att avmarkera Forever och istället sätta ett värde i count.
-# Sätt önskade värden för testomgången. Dessa finns under User Defined Variables under Test PLan.
-# Ta bort alla gamla resultat genom att välja Run > Clear All (cmd+E).
+ 1. Kontrollera att Loop Count i alla trådgrupper har Forever ikryssat. Detta innebär att trådgruppen kommer köras för evigt enligt schemaläggaren (Scheduler) där vi använder Duration för att beskriva hur länge testen skall köras. Vill du endast testa skriptet så är det lämpligt att avmarkera Forever och istället sätta ett värde i count.
+ 1. Sätt önskade värden för testomgången. Dessa finns under User Defined Variables under Test PLan.
+ 1. Ta bort alla gamla resultat genom att välja Run > Clear All (cmd+E).
 
 
 
