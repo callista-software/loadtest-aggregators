@@ -52,18 +52,13 @@
             <stringProp name="Argument.value">1</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="_BASE_URL_NTJP" elementType="Argument">
-            <stringProp name="Argument.name">_BASE_URL_NTJP</stringProp>
-            <stringProp name="Argument.value">https://qa.esb.ntjp.se/vp</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
           <elementProp name="_LOGICAL_ADDRESS" elementType="Argument">
             <stringProp name="Argument.name">_LOGICAL_ADDRESS</stringProp>
             <stringProp name="Argument.value">5565594230</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="_BASE_URL_TEST" elementType="Argument">
-            <stringProp name="Argument.name">_BASE_URL_TEST</stringProp>
+          <elementProp name="_BASE_URL" elementType="Argument">
+            <stringProp name="Argument.name">_BASE_URL</stringProp>
             <stringProp name="Argument.value">https://tptest.callistasoftware.org:20000/vp</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
@@ -148,7 +143,7 @@
           <collectionProp name="ModuleController.node_path">
             <stringProp name="-1227702913">WorkBench</stringProp>
             <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="1593011297">Container</stringProp>
+            <stringProp name="1283890892">Shared Modules</stringProp>
             <stringProp name="-1402880153">Modules</stringProp>
             <stringProp name="-1218275693">GetCareDocumentation</stringProp>
           </collectionProp>
@@ -174,7 +169,7 @@
           <collectionProp name="ModuleController.node_path">
             <stringProp name="-1227702913">WorkBench</stringProp>
             <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="1593011297">Container</stringProp>
+            <stringProp name="1283890892">Shared Modules</stringProp>
             <stringProp name="-1402880153">Modules</stringProp>
             <stringProp name="1043769114">GetMaternityMedicalHistory</stringProp>
           </collectionProp>
@@ -200,7 +195,7 @@
           <collectionProp name="ModuleController.node_path">
             <stringProp name="-1227702913">WorkBench</stringProp>
             <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="1593011297">Container</stringProp>
+            <stringProp name="1283890892">Shared Modules</stringProp>
             <stringProp name="-1402880153">Modules</stringProp>
             <stringProp name="-497655707">GetVaccinationHistory</stringProp>
           </collectionProp>
@@ -230,7 +225,7 @@
             <collectionProp name="ModuleController.node_path">
               <stringProp name="-1227702913">WorkBench</stringProp>
               <stringProp name="764597751">Test Plan</stringProp>
-              <stringProp name="-1819699067">Shared</stringProp>
+              <stringProp name="1283890892">Shared Modules</stringProp>
               <stringProp name="-1402880153">Modules</stringProp>
               <stringProp name="-1281627942">GetCareContacts</stringProp>
             </collectionProp>
@@ -240,7 +235,7 @@
             <collectionProp name="ModuleController.node_path">
               <stringProp name="-1227702913">WorkBench</stringProp>
               <stringProp name="764597751">Test Plan</stringProp>
-              <stringProp name="-1819699067">Shared</stringProp>
+              <stringProp name="1283890892">Shared Modules</stringProp>
               <stringProp name="-1402880153">Modules</stringProp>
               <stringProp name="-1218275693">GetCareDocumentation</stringProp>
             </collectionProp>
@@ -250,7 +245,7 @@
             <collectionProp name="ModuleController.node_path">
               <stringProp name="-1227702913">WorkBench</stringProp>
               <stringProp name="764597751">Test Plan</stringProp>
-              <stringProp name="-1819699067">Shared</stringProp>
+              <stringProp name="1283890892">Shared Modules</stringProp>
               <stringProp name="-1402880153">Modules</stringProp>
               <stringProp name="1043769114">GetMaternityMedicalHistory</stringProp>
             </collectionProp>
@@ -260,7 +255,7 @@
             <collectionProp name="ModuleController.node_path">
               <stringProp name="-1227702913">WorkBench</stringProp>
               <stringProp name="764597751">Test Plan</stringProp>
-              <stringProp name="-1819699067">Shared</stringProp>
+              <stringProp name="1283890892">Shared Modules</stringProp>
               <stringProp name="-1402880153">Modules</stringProp>
               <stringProp name="-497655707">GetVaccinationHistory</stringProp>
             </collectionProp>
