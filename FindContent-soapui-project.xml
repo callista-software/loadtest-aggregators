@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="FindContent" resourceRoot="" soapui-version="4.6.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="FindContentResponderBinding" type="wsdl" bindingName="{urn:riv:itintegration:engagementindex:FindContent:1:rivtabp21}FindContentResponderBinding" soapVersion="1_1" anonymous="optional" definition="file:/Users/peter/Downloads/TD_ENGAGEMENTINDEX_1_0_R/schemas/interactions/FindContentInteraction/FindContentInteraction_1.0_RIVTABP21.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/Users/peter/Downloads/TD_ENGAGEMENTINDEX_1_0_R/schemas/interactions/FindContentInteraction/FindContentInteraction_1.0_RIVTABP21.wsdl"><con:part><con:url>file:/Users/peter/Downloads/TD_ENGAGEMENTINDEX_1_0_R/schemas/interactions/FindContentInteraction/FindContentInteraction_1.0_RIVTABP21.wsdl</con:url><con:content><![CDATA[<!--Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements. See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership. Sveriges Kommuner och Landsting licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License. You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied. See the License for the
+ specific language governing permissions and limitations
+ under the License.-->
+<wsdl:definitions name="FindContentInteraction" targetNamespace="urn:riv:itintegration:engagementindex:FindContent:1:rivtabp21" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tjsr="urn:riv:itintegration:engagementindex:FindContentResponder:1" xmlns:tjsi="urn:riv:itintegration:engagementindex:FindContentInitiator:1" xmlns:tns="urn:riv:itintegration:engagementindex:FindContent:1:rivtabp21" xmlns:itr="urn:riv:itintegration:registry:1">
+  <xs:annotation>
+    <xs:documentation>Tjänsteinteraktionens namn: FindContentInteraction
+			 Beskrivning: 
+			   Service for searching the content of an engagement index
+			 Revisioner: 
+			 Tjänstedomän: itintegration:engagementindex
+			 Tjänsteinteraktionstyp: Fråga-Svar
+			 WS-profil: RIVTABP21
+			 Förvaltas av: Sveriges Kommuner och Landsting</xs:documentation>
+  </xs:annotation>
+  <wsdl:types>
+    <xs:schema targetNamespace="urn:riv:itintegration:engagementindex:FindContent:1:rivtabp21">
+      <xs:import schemaLocation="FindContentResponder_1.0.xsd" namespace="urn:riv:itintegration:engagementindex:FindContentResponder:1"/>
+      <xs:import schemaLocation="../../core_components/itintegration_registry_1.0.xsd" namespace="urn:riv:itintegration:registry:1"/>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="FindContentRequest">
+    <wsdl:part name="LogicalAddress" element="itr:LogicalAddress">
+      <wsdl:documentation>The organisation number of the organization owning the targeted engagement index</wsdl:documentation>
+    </wsdl:part>
+    <wsdl:part name="parameters" element="tjsr:FindContent"/>
+  </wsdl:message>
+  <wsdl:message name="FindContentResponse">
+    <wsdl:part name="parameters" element="tjsr:FindContentResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="FindContentResponderInterface">
+    <wsdl:operation name="FindContent">
+      <wsdl:input message="tns:FindContentRequest"/>
+      <wsdl:output message="tns:FindContentResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FindContentResponderBinding" type="tns:FindContentResponderInterface">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="FindContent">
+      <soap:operation soapAction="urn:riv:itintegration:engagementindex:FindContentResponder:1:FindContent" style="document"/>
+      <wsdl:input>
+        <soap:header use="literal" message="tns:FindContentRequest" part="LogicalAddress"/>
+        <soap:body use="literal" parts="parameters"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FindContentResponderService">
+    <wsdl:port name="FindContentResponderPort" binding="tns:FindContentResponderBinding">
+      <soap:address location="http://tempuri.org"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:/Users/peter/Downloads/TD_ENGAGEMENTINDEX_1_0_R/schemas/interactions/FindContentInteraction/FindContentResponder_1.0.xsd</con:url><con:content><![CDATA[<!--Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements. See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership. Sveriges Kommuner och Landsting licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License. You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied. See the License for the
+ specific language governing permissions and limitations
+ under the License.-->
+<xs:schema targetNamespace="urn:riv:itintegration:engagementindex:FindContentResponder:1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:riv:itintegration:engagementindex:FindContentResponder:1" xmlns:core="urn:riv:itintegration:engagementindex:1">
+  <xs:import schemaLocation="../../core_components/itintegration_engagementindex_1.0.xsd" namespace="urn:riv:itintegration:engagementindex:1"/>
+  <xs:element name="FindContent" type="tns:FindContentType"/>
+  <xs:element name="FindContentResponse" type="tns:FindContentResponseType"/>
+  <xs:complexType name="FindContentType">
+    <xs:sequence>
+      <xs:element name="registeredResidentIdentification" type="core:RegisteredResidentIdentificationType" minOccurs="1"/>
+      <xs:element name="serviceDomain" type="xs:anyURI" minOccurs="1"/>
+      <xs:element name="categorization" type="xs:string" minOccurs="0"/>
+      <xs:element name="logicalAddress" type="xs:string" minOccurs="0"/>
+      <xs:element name="businessObjectInstanceIdentifier" type="xs:string" minOccurs="0"/>
+      <xs:element name="clinicalProcessInterestId" type="core:ClinicalProcessInterestIdType" minOccurs="0"/>
+      <xs:element name="mostRecentContent" type="core:TS" minOccurs="0"/>
+      <xs:element name="sourceSystem" type="core:HsaIdType" minOccurs="0"/>
+      <xs:element name="dataController" type="core:OrgNoType" minOccurs="0"/>
+      <xs:element name="owner" type="core:HsaIdType" minOccurs="0"/>
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FindContentResponseType">
+    <xs:sequence>
+      <xs:element name="engagement" type="core:EngagementType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/peter/Downloads/TD_ENGAGEMENTINDEX_1_0_R/schemas/core_components/itintegration_engagementindex_1.0.xsd</con:url><con:content><![CDATA[<!--Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements. See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership. Sveriges Kommuner och Landsting licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License. You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied. See the License for the
+ specific language governing permissions and limitations
+ under the License.-->
+<xs:schema targetNamespace="urn:riv:itintegration:engagementindex:1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:riv:itintegration:engagementindex:1">
+  <xs:complexType name="EngagementTransactionType">
+    <xs:sequence>
+      <xs:element name="deleteFlag" type="xs:boolean"/>
+      <xs:element name="engagement" type="tns:EngagementType"/>
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EngagementType">
+    <xs:sequence>
+      <xs:element name="registeredResidentIdentification" type="tns:RegisteredResidentIdentificationType"/>
+      <xs:element name="serviceDomain" type="xs:anyURI"/>
+      <xs:element name="categorization" type="xs:string"/>
+      <xs:element name="logicalAddress" type="xs:string"/>
+      <xs:element name="businessObjectInstanceIdentifier" type="xs:string"/>
+      <xs:element name="clinicalProcessInterestId" type="tns:ClinicalProcessInterestIdType" minOccurs="1"/>
+      <xs:element name="mostRecentContent" type="tns:TS" minOccurs="0"/>
+      <xs:element name="sourceSystem" type="tns:HsaIdType"/>
+      <xs:element name="creationTime" type="tns:TS" minOccurs="0"/>
+      <xs:element name="updateTime" type="tns:TS" minOccurs="0"/>
+      <xs:element name="dataController" type="tns:OrgNoType"/>
+      <xs:element name="owner" type="tns:HsaIdType" minOccurs="0"/>
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="HsaIdType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="OrgNoType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="ClinicalProcessInterestIdType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="RegisteredResidentIdentificationType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="^[0-9]{8}[0-9pPtTfF][0-9]{3}$"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TS">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[1-9]{1}[0-9]{3}(0[1-9]{1}|1[0-2]{1})([0-2]{1}[0-9]{1}|3[0-1]{1})([0-1]{1}[0-9]{1}|2[0-3]{1})[0-5]{1}[0-9]{1}[0-5]{1}[0-9]{1}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="DT">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[1-9]{1}[0-9]{3}(0[1-9]{1}|1[0-2]{1})([0-2]{1}[0-9]{1}|3[0-1]{1})"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ResultCodeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OK"/>
+      <xs:enumeration value="ERROR"/>
+      <xs:enumeration value="INFO"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/peter/Downloads/TD_ENGAGEMENTINDEX_1_0_R/schemas/core_components/itintegration_registry_1.0.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="urn:riv:itintegration:registry:1" elementFormDefault="qualified" version="1.0" xmlns="urn:riv:itintegration:registry:1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:annotation>
+    <xs:documentation>Beskrivning: 	Grundl��ggande informationsobjekt f��r dom��nen itintegration:registry (adressering av tj��nster)
+			
+			Revisionshistorik: 2011-06-27 Mats Ekhammar, Callista Enterprise AB
+				Added ServiceContractType
+			
+			Datum:			2011-05-04
+			Beskrivning:	Initial version
+			F��rfattare:		marcus.krantz@callistaenterprise.se</xs:documentation>
+  </xs:annotation>
+  <xs:element name="LogicalAddress" type="LogicalAddressType"/>
+  <xs:element name="ServiceContract" type="ServiceContractType"/>
+  <xs:simpleType name="LogicalAddressType">
+    <xs:annotation>
+      <xs:documentation>Defines the type for logical address according to national reference architecture.
+				Superseeds wsa:To as type for logical address header in RIVTA 2.1.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:complexType name="ServiceContractType">
+    <xs:annotation>
+      <xs:documentation>Type which describes a service contract. Used in interaction GetSupportedServiceContracts.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ServiceContractNamespace" type="xs:anyURI"/>
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://qa.esb.ntjp.se/vp/FindContent/1/rivtabp21</con:endpoint></con:endpoints><con:operation isOneWay="false" action="urn:riv:itintegration:engagementindex:FindContentResponder:1:FindContent" name="FindContent" bindingOperationName="FindContent" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Frida Vårdkontakt NTjP QA"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://qa.esb.ntjp.se/vp/FindContent/1/rivtabp21</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:itintegration:registry:1" xmlns:urn1="urn:riv:itintegration:engagementindex:FindContentResponder:1">
+   <soapenv:Header>
+      <urn:LogicalAddress>5565594230</urn:LogicalAddress>
+   </soapenv:Header>
+   <soapenv:Body>
+      <urn1:FindContent>
+         <urn1:registeredResidentIdentification>197705232382</urn1:registeredResidentIdentification>
+         <!--<urn1:serviceDomain>riv:clinicalprocess:healthcond:description</urn1:serviceDomain>-->
+         <urn1:serviceDomain>riv:clinicalprocess:logistics:logistics</urn1:serviceDomain>
+		<!--
+         <urn1:categorization>?</urn1:categorization>
+         
+         <urn1:logicalAddress>?</urn1:logicalAddress>
+         
+         <urn1:businessObjectInstanceIdentifier>?</urn1:businessObjectInstanceIdentifier>
+         
+         <urn1:clinicalProcessInterestId>?</urn1:clinicalProcessInterestId>
+         
+         <urn1:mostRecentContent>?</urn1:mostRecentContent>
+         
+         <urn1:sourceSystem>?</urn1:sourceSystem>
+         
+         <urn1:dataController>?</urn1:dataController>
+         
+         <urn1:owner>?</urn1:owner>
+         -->
+      </urn1:FindContent>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:itintegration:engagementindex:FindContentResponder:1:FindContent"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Frida Vårddokumentation NTjP QA"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://qa.esb.ntjp.se/vp/FindContent/1/rivtabp21</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:itintegration:registry:1" xmlns:urn1="urn:riv:itintegration:engagementindex:FindContentResponder:1">
+   <soapenv:Header>
+      <urn:LogicalAddress>5565594230</urn:LogicalAddress>
+   </soapenv:Header>
+   <soapenv:Body>
+      <urn1:FindContent>
+         <urn1:registeredResidentIdentification>197705232382</urn1:registeredResidentIdentification>
+         <urn1:serviceDomain>riv:clinicalprocess:healthcond:description</urn1:serviceDomain>
+         <!--<urn1:serviceDomain>riv:clinicalprocess:logistics:logistics</urn1:serviceDomain>-->
+		<!--
+         <urn1:categorization>?</urn1:categorization>
+         
+         <urn1:logicalAddress>?</urn1:logicalAddress>
+         
+         <urn1:businessObjectInstanceIdentifier>?</urn1:businessObjectInstanceIdentifier>
+         
+         <urn1:clinicalProcessInterestId>?</urn1:clinicalProcessInterestId>
+         
+         <urn1:mostRecentContent>?</urn1:mostRecentContent>
+         
+         <urn1:sourceSystem>?</urn1:sourceSystem>
+         
+         <urn1:dataController>?</urn1:dataController>
+         
+         <urn1:owner>?</urn1:owner>
+         -->
+      </urn1:FindContent>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:itintegration:engagementindex:FindContentResponder:1:FindContent"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:sensitiveInformation/></con:soapui-project>
