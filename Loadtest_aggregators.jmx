@@ -22,13 +22,13 @@
             <stringProp name="Argument.value">/clinicalprocess/healthcond/description/GetCareDocumentation/2/rivtabp21</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="GET_MATERNITY_MEDICAL_HISTORY" elementType="Argument">
-            <stringProp name="Argument.name">GET_MATERNITY_MEDICAL_HISTORY</stringProp>
+          <elementProp name="GET_MATERNITY_MEDICAL_HISTORY_PATH" elementType="Argument">
+            <stringProp name="Argument.name">GET_MATERNITY_MEDICAL_HISTORY_PATH</stringProp>
             <stringProp name="Argument.value">/clinicalprocess/healthcond/actoutcome/GetMaternityMedicalHistory/2/rivtabp21</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="GET_VACCINATION_HISTORY" elementType="Argument">
-            <stringProp name="Argument.name">GET_VACCINATION_HISTORY</stringProp>
+          <elementProp name="GET_VACCINATION_HISTORY_PATH" elementType="Argument">
+            <stringProp name="Argument.name">GET_VACCINATION_HISTORY_PATH</stringProp>
             <stringProp name="Argument.value">/clinicalprocess/activityprescription/actoutcome/GetVaccinationHistory/1/rivtabp21</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
@@ -64,11 +64,11 @@
           </elementProp>
           <elementProp name="_BASE_URL_TEST" elementType="Argument">
             <stringProp name="Argument.name">_BASE_URL_TEST</stringProp>
-            <stringProp name="Argument.value">https://test.esb.rtp.sll.se/vp</stringProp>
+            <stringProp name="Argument.value">https://tptest.callistasoftware.org:20000/vp</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="_GET_CARE_CONTACTS_PATH_TEST" elementType="Argument">
-            <stringProp name="Argument.name">_GET_CARE_CONTACTS_PATH_TEST</stringProp>
+          <elementProp name="_GET_CARE_CONTACTS_PATH" elementType="Argument">
+            <stringProp name="Argument.name">_GET_CARE_CONTACTS_PATH</stringProp>
             <stringProp name="Argument.value">/GetCareContacts/2/rivtabp21</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
@@ -77,13 +77,13 @@
             <stringProp name="Argument.value">/GetCareDocumentation/2/rivtabp21</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="_GET_MATERNITY_MEDICAL_HISTORY" elementType="Argument">
-            <stringProp name="Argument.name">_GET_MATERNITY_MEDICAL_HISTORY</stringProp>
+          <elementProp name="_GET_MATERNITY_MEDICAL_HISTORY_PATH" elementType="Argument">
+            <stringProp name="Argument.name">_GET_MATERNITY_MEDICAL_HISTORY_PATH</stringProp>
             <stringProp name="Argument.value">/GetMaternityMedicalHistory/2/rivtabp21</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="_GET_VACCINATION_HISTORY" elementType="Argument">
-            <stringProp name="Argument.name">_GET_VACCINATION_HISTORY</stringProp>
+          <elementProp name="_GET_VACCINATION_HISTORY_PATH" elementType="Argument">
+            <stringProp name="Argument.name">_GET_VACCINATION_HISTORY_PATH</stringProp>
             <stringProp name="Argument.value">/GetVaccinationHistory/1/rivtabp21</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
@@ -493,7 +493,7 @@
               <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
                 <collectionProp name="Arguments.arguments"/>
               </elementProp>
-              <stringProp name="SoapSampler.URL_DATA">${BASE_URL}${GET_MATERNITY_MEDICAL_HISTORY}</stringProp>
+              <stringProp name="SoapSampler.URL_DATA">${BASE_URL}${GET_MATERNITY_MEDICAL_HISTORY_PATH}</stringProp>
               <stringProp name="HTTPSamper.xml_data">&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:urn=&quot;urn:riv:itintegration:registry:1&quot; xmlns:urn1=&quot;urn:riv:clinicalprocess:healthcond:actoutcome:GetMaternityMedicalHistoryResponder:2&quot; xmlns:urn2=&quot;urn:riv:clinicalprocess:healthcond:actoutcome:2&quot;&gt;
    &lt;soapenv:Header&gt;
       &lt;urn:LogicalAddress&gt;${LOGICAL_ADDRESS}&lt;/urn:LogicalAddress&gt;
@@ -534,7 +534,7 @@
               <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
                 <collectionProp name="Arguments.arguments"/>
               </elementProp>
-              <stringProp name="SoapSampler.URL_DATA">${BASE_URL}</stringProp>
+              <stringProp name="SoapSampler.URL_DATA">${BASE_URL}${GET_VACCINATION_HISTORY_PATH}</stringProp>
               <stringProp name="HTTPSamper.xml_data">&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:urn=&quot;urn:riv:itintegration:registry:1&quot; xmlns:urn1=&quot;urn:riv:clinicalprocess:activityprescription:actoutcome:GetVaccinationHistoryResponder:1&quot; xmlns:urn2=&quot;urn:riv:clinicalprocess:activityprescription:actoutcome:1&quot;&gt;
    &lt;soapenv:Header&gt;
       &lt;urn:LogicalAddress&gt;${LOGICAL_ADDRESS}&lt;/urn:LogicalAddress&gt;
