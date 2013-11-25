@@ -13,7 +13,9 @@ I testplanen finns det flera variabler definierade som används när testerna k�
  * **LOADTEST_DURATIONTIME_SEC** - Antal sekunder som lasttesten skall pågå.
  * **ROBUSTNESSTEST_DURATIONTIME_SEC** - Antal sekunder som ribusthetstesten skall pågå.
  * **NO_OF_THREADS** - Antal trådar som skall användas för varje trådgrupp.
- 
+ * **RAMP_UP_PERIOD_SEC** - Totalt antal sekunder det skall ta för att starta upp alla trådar i trådgruppen
+
+
 Det finns en datafil (users.csv) som används för att mata tjänsteanropen med data. Denna filen är en komma separerad fil som håller patientinformation såsom personid och typ av person id.
 
 ### Assertions ###
@@ -23,10 +25,11 @@ Den finns en assertion vid varje anrop som validera med hjälp av XPath att det 
  
 ## Att köra testplanen ##
 
+Då vi använder oss av SSL så måste man själv tala om vilket certifikat som skall användas. Detta gör man genom att välja certifikat _Option > SSL Manager_ (cmd+M). Lösenord anges först när du startar en körning.
 
 Kör testplanen genom att köra följande steg:
  1. Kontrollera att Loop Count i alla trådgrupper har Forever ikryssat. Detta innebär att trådgruppen kommer köras för evigt enligt schemaläggaren (Scheduler) där vi använder Duration för att beskriva hur länge testen skall köras. Vill du endast testa skriptet så är det lämpligt att avmarkera Forever och istället sätta ett värde i count.
- 1. Sätt önskade värden för testomgången. Dessa finns under User Defined Variables under Test PLan.
+ 1. Sätt önskade värden för testomgången. Dessa finns under User Defined Variables under Test Plan.
  1. Ta bort alla gamla resultat genom att välja Run > Clear All (cmd+E).
 
 
