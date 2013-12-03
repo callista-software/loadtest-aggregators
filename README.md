@@ -1,6 +1,5 @@
 loadtest-aggregators
 ====================
-En rad som ska bort
 Detta projekt är ett [jmeter](http://jmeter.apache.org/) projekt som används för att last- och robusthetstesta agregerande tjänster i den [nationella tjänsteplattformen (NTjP)](https://skl-tp.atlassian.net/wiki/display/NTJP/NTjP+Home).
 
 
