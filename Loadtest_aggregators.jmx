@@ -82,6 +82,11 @@
             <stringProp name="Argument.value">/GetVaccinationHistory/1/rivtabp21</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+          <elementProp name="GET_SUBJECT_OF_CARE_SCHEDULE_PATH" elementType="Argument">
+            <stringProp name="Argument.name">GET_SUBJECT_OF_CARE_SCHEDULE_PATH</stringProp>
+            <stringProp name="Argument.value">/GetSubjectOfCareSchedule/1/rivtabp21</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
           <elementProp name="LOGICAL_ADDRESS" elementType="Argument">
             <stringProp name="Argument.name">LOGICAL_ADDRESS</stringProp>
             <stringProp name="Argument.value">agg</stringProp>
@@ -212,6 +217,32 @@
         </ModuleController>
         <hashTree/>
       </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Load - GetSubjectOfCareSchedule" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">${NO_OF_THREADS}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">${RAMP_UP_PERIOD_SEC}</stringProp>
+        <longProp name="ThreadGroup.start_time">1385104108000</longProp>
+        <longProp name="ThreadGroup.end_time">1385104108000</longProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.duration">${LOADTEST_DURATIONTIME_SEC}</stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="RunGetSubjectOfCareSchedule" enabled="true">
+          <collectionProp name="ModuleController.node_path">
+            <stringProp name="-1227702913">WorkBench</stringProp>
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="1283890892">Shared Modules</stringProp>
+            <stringProp name="-1402880153">Modules</stringProp>
+            <stringProp name="1113768693">GetSubjectOfCareSchedule</stringProp>
+          </collectionProp>
+        </ModuleController>
+        <hashTree/>
+      </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Robustness" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
@@ -266,6 +297,16 @@
               <stringProp name="1283890892">Shared Modules</stringProp>
               <stringProp name="-1402880153">Modules</stringProp>
               <stringProp name="-497655707">GetVaccinationHistory</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="GetSubjectOfCareSchedule" enabled="true">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="-1227702913">WorkBench</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="1283890892">Shared Modules</stringProp>
+              <stringProp name="-1402880153">Modules</stringProp>
+              <stringProp name="1113768693">GetSubjectOfCareSchedule</stringProp>
             </collectionProp>
           </ModuleController>
           <hashTree/>
@@ -581,6 +622,47 @@
 &lt;/soapenv:Envelope&gt;</stringProp>
               <stringProp name="SoapSampler.xml_data_file"></stringProp>
               <stringProp name="SoapSampler.SOAP_ACTION">urn:riv:clinicalprocess:activityprescription:actoutcome:GetVaccinationHistoryResponder:2:GetVaccinationHistory</stringProp>
+              <stringProp name="SoapSampler.SEND_SOAP_ACTION">true</stringProp>
+              <boolProp name="HTTPSampler.use_keepalive">false</boolProp>
+            </SoapSampler>
+            <hashTree>
+              <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="XPath Assertion" enabled="false">
+                <boolProp name="XPath.negate">true</boolProp>
+                <stringProp name="XPath.xpath">//ProcessingStatusList/statusCode[text()=&apos;NoDataSynchFailed&apos;]</stringProp>
+                <boolProp name="XPath.validate">false</boolProp>
+                <boolProp name="XPath.whitespace">false</boolProp>
+                <boolProp name="XPath.tolerant">false</boolProp>
+                <boolProp name="XPath.namespace">false</boolProp>
+              </XPathAssertion>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="GetSubjectOfCareSchedule" enabled="true"/>
+          <hashTree>
+            <SoapSampler guiclass="SoapSamplerGui" testclass="SoapSampler" testname="GetSubjectOfCareSchedule" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments"/>
+              </elementProp>
+              <stringProp name="SoapSampler.URL_DATA">${BASE_URL}${GET_SUBJECT_OF_CARE_SCHEDULE_PATH}</stringProp>
+              <stringProp name="HTTPSamper.xml_data">&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:urn=&quot;urn:riv:interoperability:headers:1&quot; xmlns:urn1=&quot;urn:riv:itintegration:registry:1&quot; xmlns:urn2=&quot;urn:riv:crm:scheduling:GetSubjectOfCareScheduleResponder:1&quot;&gt;
+   &lt;soapenv:Header&gt;
+      &lt;urn:Actor&gt;
+         &lt;urn:actorId&gt;?&lt;/urn:actorId&gt;
+         &lt;urn:actorType&gt;?&lt;/urn:actorType&gt;
+         &lt;!--You may enter ANY elements at this point--&gt;
+      &lt;/urn:Actor&gt;
+      &lt;urn1:LogicalAddress&gt;${LOGICAL_ADDRESS}&lt;/urn1:LogicalAddress&gt;
+   &lt;/soapenv:Header&gt;
+   &lt;soapenv:Body&gt;
+      &lt;urn2:GetSubjectOfCareSchedule&gt;
+         &lt;urn2:healthcare_facility&gt;${LOGICAL_ADDRESS}&lt;/urn2:healthcare_facility&gt;
+         &lt;urn2:subject_of_care&gt;195609230577&lt;/urn2:subject_of_care&gt;
+         &lt;!--You may enter ANY elements at this point--&gt;
+      &lt;/urn2:GetSubjectOfCareSchedule&gt;
+   &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;</stringProp>
+              <stringProp name="SoapSampler.xml_data_file"></stringProp>
+              <stringProp name="SoapSampler.SOAP_ACTION">urn:riv:crm:scheduling:GetSubjectOfCareScheduleResponder:1:GetSubjectOfCareSchedule</stringProp>
               <stringProp name="SoapSampler.SEND_SOAP_ACTION">true</stringProp>
               <boolProp name="HTTPSampler.use_keepalive">false</boolProp>
             </SoapSampler>
